@@ -9,13 +9,14 @@ class rectPrism:
     l=0
     w=0
     h=0
+
     def volume(self):
         volume = self.l*self.w*self.h
         print(volume)
         return volume
-    
+
     def surfaceArea(self):
-        sa = self.l*self.w*2+self.l*self.h*2+self.w*self.h*2    
+        sa = self.l*self.w*2+self.l*self.h*2+self.w*self.h*2 
         return sa
 
     def __init__(self, l=0, w=0, h=0):
@@ -23,12 +24,14 @@ class rectPrism:
         self.l = l
         self.w =w
         self.h = h
-        if l and w and h >0:
-            self.volume()
-            self.surfaceArea()
-        else:
-            print('no...')
 
+        self.volume()
+        self.surfaceArea()    
+        
+        if self.volume == 0:
+            return None
+        if self.surfaceArea ==0:
+            return None
 # class instances and assertions below:
 
 a = rectPrism(l=10,w=2,h=5)
